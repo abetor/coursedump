@@ -1,0 +1,57 @@
+{
+  "id": "11111111-2222-3333-4444-555555555555",
+  "title": "Текстовый гайд",
+  "hasAccess": true,
+  "data": [
+    {
+      "type": "text",
+      "content": "[\"Вступление к гайду.\", \"\", []]"
+    },
+    {
+      "type": "header",
+      "content": "[\"Шаги\", \"\", []]"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "data": [
+            {
+              "type": "text",
+              "content": "[\"Сделать первое\", \"\", []]"
+            }
+          ]
+        },
+        {
+          "data": [
+            {
+              "type": "link",
+              "url": "https://example.test/second",
+              "content": "[\"Открыть второе\", \"\", []]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "url": "https://example.test/base",
+      "content": "[\"База знаний\", \"\", []]"
+    },
+    {
+      "type": "file",
+      "title": "Чеклист.pdf",
+      "url": "https://example.test/checklist.pdf",
+      "size": 1572864
+    },
+    {
+      "type": "text",
+      "modificator": "BLOCK_END",
+      "content": ""
+    },
+    {
+      "type": "text",
+      "content": "[\"Финал.\", \"\", []]"
+    }
+  ]
+}

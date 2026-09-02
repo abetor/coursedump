@@ -1,0 +1,31 @@
+# Default package rules for cleaning filename tags and promotional clutter.
+# The first run seeds <data>/filters.toml. Users can extend that working copy;
+# this file remains the package's initial rule set.
+
+# Apply repeatedly at the start of every directory and filename component.
+strip_prefixes = [
+    '^\s*\[[^\]]{1,60}\]\s*',       # [SWBAND.CO], [club12345], [School name]
+    '^\s*\([^)]{0,40}sw\.?band[^)]*\)\s*',
+]
+
+# Drop an entire file when its name matches, case-insensitively.
+blacklist = [
+    "\u043d\u0435 \u043f\u0440\u043e\u043f\u0443\u0441\u0442\u0438 \u044d\u0442\u043e\u0442 \u0448\u0430\u0433",
+    "\u0438\u043d\u0444\u043e-?\u0431\u0438\u0437\u043d\u0435\u0441\u043c\u0435\u043d\u044b",
+    "\u0445\u0432\u0430\u0442\u0430\u044e\u0442\u0441\u044f \u0437\u0430 \u0433\u043e\u043b\u043e\u0432",
+    "\u0441\u043b\u0438\u0432 \u043a\u0443\u0440\u0441",
+    "\u0441\u043a\u0430\u0447\u0430\u043d\u043e \u0441",
+    "\u043d\u0430\u0448 \u0442\u0435\u043b\u0435\u0433\u0440\u0430\u043c",
+    "\u043d\u0430\u0448 \u043a\u0430\u043d\u0430\u043b",
+    "\u043f\u043e\u0434\u043f\u0438\u0448\u0438\u0441\u044c",
+    "^\\s*\u0447\u0438\u0442\u0430\u0442\u044c \u043f\u0435\u0440\u0435\u0434 \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u043e\u043c",
+]
+
+# Ignore operating-system clutter silently; it does not appear in the index.
+junk = [
+    '^\.DS_Store$',
+    '^thumbs\.db$',
+    '\.url$',
+    '^desktop\.ini$',
+    '^\._',
+]
