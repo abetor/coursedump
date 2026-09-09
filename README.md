@@ -1,4 +1,4 @@
-# tool-coursedump
+# coursedump
 
 Convert authorized course files, videos, subtitles, and documents into resumable Markdown corpora with local speech recognition.
 
@@ -151,10 +151,8 @@ signed media URLs, or downloaded content in issues, logs, fixtures, or commits.
 
 ## Limitations
 
-- Russian survives in the test suite only, as test data: 87 lines across nine
-  test files where the Russian text is itself the thing under test. Source
-  comments and docstrings, CLI messages, README and DESIGN are English, and so
-  are test comments, docstrings, test names and placeholder data.
+- Test fixtures include Russian text where encoding, Unicode normalization, or
+  multi-byte filename handling is the behavior under test.
 - Download support depends on the installed versions and capabilities of
   `rclone` and `yt-dlp`.
 - Cloud adapters and authenticated services require user configuration and may
@@ -168,16 +166,6 @@ signed media URLs, or downloaded content in issues, logs, fixtures, or commits.
 - The post-corpus path preserves the wrapper format, but transcript paragraph
   boundaries may differ from other transcription tools.
 
-The suite keeps those Cyrillic fixtures on purpose. They cover a windows-1251
-saved web page, CP1251 subtitle decoding, Unicode normalization and combining
-marks, Cyrillic directory and file names travelling through the pipeline and
-through `ffmpeg`, filename truncation and hook field limits counted in bytes on
-multi-byte text, the Russian promotional-clutter samples that the default
-blacklist matches, the legacy Russian part marker in corpus file names, catalog
-rows with Russian titles, and a captured Boosty text post with the output
-expected from it. These strings are test data, not comments, documentation,
-credentials, or operational configuration.
-
 ## Tests
 
 Run the hermetic suite without bytecode or pytest caches:
@@ -188,6 +176,11 @@ PYTHONDONTWRITEBYTECODE=1 uv run --group dev python -m pytest -q -p no:cacheprov
 
 The suite uses temporary directories, local stubs, synthetic URLs, and local
 HTTP fixtures. It does not require real course data or live credentials.
+
+## Provenance
+
+This repository began as a public source snapshot of a personal tool. Earlier local development
+history is not included.
 
 ## License
 
