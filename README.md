@@ -1,5 +1,7 @@
 # coursedump
 
+[![Tests](https://github.com/abetor/coursedump/actions/workflows/tests.yml/badge.svg)](https://github.com/abetor/coursedump/actions/workflows/tests.yml)
+
 Convert authorized course files, videos, subtitles, and documents into resumable Markdown corpora with local speech recognition.
 
 [Quick start](#quick-start) | [Offline demo](#demo) | [Architecture](docs/DESIGN.md) | [Tests](#tests) | [Contributing and agent guide](AGENTS.md) | [MIT license](LICENSE)
