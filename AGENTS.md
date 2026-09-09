@@ -70,3 +70,20 @@ corpus wrapper and deduplication key, queue file and state layout, data-root
 precedence, and resume semantics as public contracts. A contract change must
 update `README.md` and `docs/DESIGN.md` and add or adjust tests in the same
 change. Version machine-readable output instead of silently reshaping it.
+
+## Non-English test fixtures
+
+Russian survives in the test suite only, as test data: 87 lines across nine
+test files where the Russian text is itself the thing under test. Source
+comments and docstrings, CLI messages, README and DESIGN are English, and so
+are test comments, docstrings, test names and placeholder data.
+
+The suite keeps those Cyrillic fixtures on purpose. They cover a windows-1251
+saved web page, CP1251 subtitle decoding, Unicode normalization and combining
+marks, Cyrillic directory and file names travelling through the pipeline and
+through `ffmpeg`, filename truncation and hook field limits counted in bytes on
+multi-byte text, the Russian promotional-clutter samples that the default
+blacklist matches, the legacy Russian part marker in corpus file names, catalog
+rows with Russian titles, and a captured Boosty text post with the output
+expected from it. These strings are test data, not comments, documentation,
+credentials, or operational configuration.
